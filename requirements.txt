@@ -13,3 +13,4 @@ pydantic-settings==2.9.1
 pydantic_core==2.33.1
 streamlit==1.44.1
 pysqlite3-binary
+setuptools
