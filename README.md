@@ -22,6 +22,7 @@ Now run the streamlit app
 cd src
 streamlit run web_research_app.py
 ```
+If you want to run some test on the individual units check out src/crew_tests.py
 Make sure to add the OpenAI and Serper API keys in the streamlit app
 
 ## Running the Project
@@ -29,4 +30,4 @@ Make sure to add the OpenAI and Serper API keys in the streamlit app
 ## Support
 
 For support, questions, or feedback regarding the WebResearchAgent Crew or crewAI.
-- Check out the [documentation]((documentation/doc.md)
+- Check out the [documentation](documentation/doc.md)
