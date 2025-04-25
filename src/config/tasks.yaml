@@ -1,0 +1,52 @@
+query_task:
+  description: >
+    Analyze the user's research question and produce structured keywords, topics, and intent.
+    user's question : {query}
+  expected_output: >
+    A JSON object with extracted keywords, topics, and a description of the user's intent.
+  agent: query_analyst
+
+search_task:
+  description: >
+    Use the extracted keywords to perform web searches and return relevent information and a list of relevant URLs.
+  expected_output: >
+    A list of the most relevent information regarding the topic and A list of 5-10 relevant URLs with short descriptions.
+  agent: search_expert
+
+
+scrape_task:
+  description: >
+    Scrape the provided URLs and extract their main readable text content.
+  expected_output: >
+    A list of cleaned text chunks, one per URL.
+  agent: web_scraper
+
+evaluate_task:
+  description: >
+    Evaluate the scraped content and score each piece for 
+    1. Relevance (High, Medium, Low)
+    2. Credibility (High, Medium, Low)
+    3. Key insights (bullet points)
+    4. Any potential bias or reliability issues
+  expected_output: >
+    A scored list of content chunks with labels of any of the following:
+    1. Relevance (High, Medium, Low)
+    2. Credibility (High, Medium, Low)
+    3. Key insights (bullet points)
+    4. Any potential bias or reliability issues
+  agent: content_evaluator
+
+synthesize_task:
+  description: >
+    Aggregate all high-relevance content into a coherent report.
+  expected_output: >
+    A detailed synthesized report with clear, non-contradictory insights.
+  agent: synthesizer
+
+reporting_task:
+  description: >
+    Format the research into a report that's readable and structured in a markdown format.Organize information in a logical structure that
+    answers the users query.
+  expected_output: >
+    A markdown report with different sections: Introduction, Findings, Conclusion, References. Add more sections if nessesary.
+  agent: reporting_analyst

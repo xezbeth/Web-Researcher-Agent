@@ -1,0 +1,23 @@
+[project]
+name = "web_research_agent"
+version = "0.1.0"
+description = "web-research-agent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.114.0,<1.0.0"
+]
+
+[project.scripts]
+web_research_agent = "web_research_agent.main:run"
+run_crew = "web_research_agent.main:run"
+train = "web_research_agent.main:train"
+replay = "web_research_agent.main:replay"
+test = "web_research_agent.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
